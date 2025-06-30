@@ -1,0 +1,30 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug",
+            "type": "lldb-mi",
+            "request": "launch",
+            "target": "./bin/executable",
+            "cwd": "${workspaceRoot}",
+            "valuesFormatting": "parseText"
+        },
+        {
+            "name": "ccpsdbg",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}\\zig-out\\bin\\${input:executableName}",
+            "cwd": "${workspaceRoot}"
+        }
+  ],
+  "inputs": [
+    {
+      "type": "promptString",
+      "id": "executableName",
+      "description": "Enter the name of the executable to debug (e.g., bcg)"
+    }
+  ]
+}
