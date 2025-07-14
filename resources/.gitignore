@@ -1,0 +1,6 @@
+# Ignore Windows executable files
+*.exe
+
+# Ignore Zig build cache and output folders
+.zig-cache/
+zig-out/

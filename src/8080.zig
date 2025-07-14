@@ -68,7 +68,7 @@ pub const Intel8080 = struct {
     };
     // zig fmt: on
 
-    const opcode_names = [_][]const u8{ "NOP", "LXI_B", "STAX_B", "INX_B", "INR_B", "DCR_B", "MVI_B", "RLC", "NOP0", "DAD_B", "LDAX_B", "DCX_B", "INR_C", "DCR_C", "MVI_C", "RRC", "NOP1", "LXI_D", "STAX_D", "INX_D", "INR_D", "DCR_D", "MVI_D", "RAL", "NOP2", "DAD_D", "LDAX_D", "DCX_D", "INR_E", "DCR_E", "MVI_E", "RAR", "NOP3", "LXI_H", "SHLD", "INX_H", "INR_H", "DCR_H", "MVI_H", "DAA", "NOP4", "DAD_H", "LHLD", "DCX_H", "INR_L", "DCR_L", "MVI_L", "CMA", "NOP5", "LXI_SP", "STA", "INX_SP", "INR_M", "DCR_M", "MVI_M", "STC", "NOP6", "DAD_SP", "LDA", "DCX_SP", "INR_A", "DCR_A", "MVI_A", "CMC", "MOV_BB", "MOV_BC", "MOV_BD", "MOV_BE", "MOV_BH", "MOV_BL", "MOV_BM", "MOV_BA", "MOV_CB", "MOV_CC", "MOV_CD", "MOV_CE", "MOV_CH", "MOV_CL", "MOV_CM", "MOV_CA", "MOV_DB", "MOV_DC", "MOV_DD", "MOV_DE", "MOV_DH", "MOV_DL", "MOV_DM", "MOV_DA", "MOV_EB", "MOV_EC", "MOV_ED", "MOV_EE", "MOV_EH", "MOV_EL", "MOV_EM", "MOV_EA", "MOV_HB", "MOV_HC", "MOV_HD", "MOV_HE", "MOV_HH", "MOV_HL", "MOV_HM", "MOV_HA", "MOV_LB", "MOV_LC", "MOV_LD", "MOV_LE", "MOV_LH", "MOV_LL", "MOV_LM", "MOV_LA", "MOV_MB", "MOV_MC", "MOV_MD", "MOV_ME", "MOV_MH", "MOV_ML", "HLT", "MOV_MA", "MOV_AB", "MOV_AC", "MOV_AD", "MOV_AE", "MOV_AH", "MOV_AL", "MOV_AM", "MOV_AA", "ADD_B", "ADD_C", "ADD_D", "ADD_E", "ADD_H", "ADD_L", "ADD_M", "ADD_A", "ADC_B", "ADC_C", "ADC_D", "ADC_E", "ADC_H", "ADC_L", "ADC_M", "ADC_A", "SUB_B", "SUB_C", "SUB_D", "SUB_E", "SUB_H", "SUB_L", "SUB_M", "SUB_A", "SBB_B", "SBB_C", "SBB_D", "SBB_E", "SBB_H", "SBB_L", "SBB_M", "SBB_A", "ANA_B", "ANA_C", "ANA_D", "ANA_E", "ANA_H", "ANA_L", "ANA_M", "ANA_A", "XRA_B", "XRA_C", "XRA_D", "XRA_E", "XRA_H", "XRA_L", "XRA_M", "XRA_A", "ORA_B", "ORA_C", "ORA_D", "ORA_E", "ORA_H", "ORA_L", "ORA_M", "ORA_A", "CMP_B", "CMP_C", "CMP_D", "CMP_E", "CMP_H", "CMP_L", "CMP_M", "CMP_A", "RNZ", "POP_B", "JNZ", "JMP", "CNZ", "PUSH_B", "ADI", "RST_0", "RZ", "RET", "JZ", "JMP1", "CZ", "CALL", "ACI", "RST_1", "RNC", "POP_D", "JNC", "OUT_", "CNC", "PUSH_D", "SUI", "RST_2", "RC", "RET1", "JC", "IN_", "CC", "CALL1", "SBI", "RST_3", "RPO", "POP_H", "JPO", "XTHL", "CPO", "PUSH_H", "ANI", "RST_4", "RPE", "PCHL", "JPE", "XCHG", "CPE", "CALL2", "XRI", "RST_5", "RP", "POP_PSW", "JP", "DI", "CP", "PUSH_PSW", "ORI", "RST_6", "RM", "SPHL", "JM", "EI", "CM", "CALL3", "CPI", "RST_7" };
+    pub const opcode_names = [_][]const u8{ "NOP", "LXI_B", "STAX_B", "INX_B", "INR_B", "DCR_B", "MVI_B", "RLC", "NOP0", "DAD_B", "LDAX_B", "DCX_B", "INR_C", "DCR_C", "MVI_C", "RRC", "NOP1", "LXI_D", "STAX_D", "INX_D", "INR_D", "DCR_D", "MVI_D", "RAL", "NOP2", "DAD_D", "LDAX_D", "DCX_D", "INR_E", "DCR_E", "MVI_E", "RAR", "NOP3", "LXI_H", "SHLD", "INX_H", "INR_H", "DCR_H", "MVI_H", "DAA", "NOP4", "DAD_H", "LHLD", "DCX_H", "INR_L", "DCR_L", "MVI_L", "CMA", "NOP5", "LXI_SP", "STA", "INX_SP", "INR_M", "DCR_M", "MVI_M", "STC", "NOP6", "DAD_SP", "LDA", "DCX_SP", "INR_A", "DCR_A", "MVI_A", "CMC", "MOV_BB", "MOV_BC", "MOV_BD", "MOV_BE", "MOV_BH", "MOV_BL", "MOV_BM", "MOV_BA", "MOV_CB", "MOV_CC", "MOV_CD", "MOV_CE", "MOV_CH", "MOV_CL", "MOV_CM", "MOV_CA", "MOV_DB", "MOV_DC", "MOV_DD", "MOV_DE", "MOV_DH", "MOV_DL", "MOV_DM", "MOV_DA", "MOV_EB", "MOV_EC", "MOV_ED", "MOV_EE", "MOV_EH", "MOV_EL", "MOV_EM", "MOV_EA", "MOV_HB", "MOV_HC", "MOV_HD", "MOV_HE", "MOV_HH", "MOV_HL", "MOV_HM", "MOV_HA", "MOV_LB", "MOV_LC", "MOV_LD", "MOV_LE", "MOV_LH", "MOV_LL", "MOV_LM", "MOV_LA", "MOV_MB", "MOV_MC", "MOV_MD", "MOV_ME", "MOV_MH", "MOV_ML", "HLT", "MOV_MA", "MOV_AB", "MOV_AC", "MOV_AD", "MOV_AE", "MOV_AH", "MOV_AL", "MOV_AM", "MOV_AA", "ADD_B", "ADD_C", "ADD_D", "ADD_E", "ADD_H", "ADD_L", "ADD_M", "ADD_A", "ADC_B", "ADC_C", "ADC_D", "ADC_E", "ADC_H", "ADC_L", "ADC_M", "ADC_A", "SUB_B", "SUB_C", "SUB_D", "SUB_E", "SUB_H", "SUB_L", "SUB_M", "SUB_A", "SBB_B", "SBB_C", "SBB_D", "SBB_E", "SBB_H", "SBB_L", "SBB_M", "SBB_A", "ANA_B", "ANA_C", "ANA_D", "ANA_E", "ANA_H", "ANA_L", "ANA_M", "ANA_A", "XRA_B", "XRA_C", "XRA_D", "XRA_E", "XRA_H", "XRA_L", "XRA_M", "XRA_A", "ORA_B", "ORA_C", "ORA_D", "ORA_E", "ORA_H", "ORA_L", "ORA_M", "ORA_A", "CMP_B", "CMP_C", "CMP_D", "CMP_E", "CMP_H", "CMP_L", "CMP_M", "CMP_A", "RNZ", "POP_B", "JNZ", "JMP", "CNZ", "PUSH_B", "ADI", "RST_0", "RZ", "RET", "JZ", "JMP1", "CZ", "CALL", "ACI", "RST_1", "RNC", "POP_D", "JNC", "OUT_", "CNC", "PUSH_D", "SUI", "RST_2", "RC", "RET1", "JC", "IN_", "CC", "CALL1", "SBI", "RST_3", "RPO", "POP_H", "JPO", "XTHL", "CPO", "PUSH_H", "ANI", "RST_4", "RPE", "PCHL", "JPE", "XCHG", "CPE", "CALL2", "XRI", "RST_5", "RP", "POP_PSW", "JP", "DI", "CP", "PUSH_PSW", "ORI", "RST_6", "RM", "SPHL", "JM", "EI", "CM", "CALL3", "CPI", "RST_7" };
 
     const opcode_cycles = [_]u8{
         //  0  1   2   3   4   5   6   7   8  9   A   B   C   D   E  F
@@ -262,7 +262,7 @@ pub const Intel8080 = struct {
         }
         // Set flags
         self.set_zsp(value);
-        self.flags.bits.aux_carry = if ((value & 0x0F) == 0x0F) 1 else 0; // Check for half-borrow
+        self.flags.bits.aux_carry = if ((value & 0x0F) == 0x0F) 1 else 0;
     }
 
     // MVI
@@ -353,14 +353,13 @@ pub const Intel8080 = struct {
         }
 
         const borrow_in: u8 = if (with_borrow) self.flags.bits.carry else 0;
-        const result = @as(u16, self.a) -% @as(u16, value) -% @as(u16, borrow_in);
+        const result = @as(u16, self.a) -% (@as(u16, value) +% @as(u16, borrow_in));
         const result_u8: u8 = @truncate(result);
 
         // Set flags
         self.set_zsp(result_u8);
         self.flags.bits.carry = if (result > 0xFF) 1 else 0; // Set carry if underflow
         self.flags.bits.aux_carry = if (((self.a & 0x0F) < ((value & 0x0F) + borrow_in))) 1 else 0; // Correct half-borrow calculation
-
         self.a = result_u8; // Store result in accumulator
     }
 
@@ -380,7 +379,8 @@ pub const Intel8080 = struct {
         switch (opcode) {
             .ANA_B, .ANA_C, .ANA_D, .ANA_E, .ANA_H, .ANA_L, .ANA_M, .ANA_A => {
                 self.a = self.a & value; // AND operation
-                self.flags.bits.aux_carry = if ((self.a & 0x0F) < (value & 0x0F)) 1 else 0; // Check for half-carry
+                self.flags.bits.aux_carry = if (((self.a | value) & 0x08) != 0) 1 else 0;
+                //self.flags.bits.aux_carry = if ((self.a & 0x0F) < (value & 0x0F)) 1 else 0; // Check for half-carry
             },
             .XRA_B, .XRA_C, .XRA_D, .XRA_E, .XRA_H, .XRA_L, .XRA_M, .XRA_A => {
                 self.a = self.a ^ value; // XOR operation
@@ -454,7 +454,9 @@ pub const Intel8080 = struct {
         }
 
         if (debug == true) {
-            std.debug.print("{X:04}: {s} {X:02} {X:02} \t\t inst={X:02}, cf={d}\n", .{ self.pc - 1, Intel8080.opcode_names[instruction], ram[self.pc], ram[self.pc + 1], instruction, self.flags.bits.carry });
+            const stdout = std.io.getStdOut().writer();
+
+            stdout.print("{X:04}: {s} {X:02} {X:02} \t\t inst={X:02}, flags={X:02}, reg=[{X:02}|{X:02}|{X:02}|{X:02}|{X:02}|{X:02}|{X:02}]\n", .{ self.pc - 1, Intel8080.opcode_names[instruction], ram[self.pc], ram[self.pc + 1], instruction, self.flags.byte, self.b, self.c, self.d, self.e, self.h, self.l, self.a }) catch unreachable;
         }
 
         // decode instructions
@@ -649,9 +651,9 @@ pub const Intel8080 = struct {
                     .RPO => self.flags.bits.parity == 0,
                     .RPE => self.flags.bits.parity == 1,
                     .RP => self.flags.bits.sign == 0,
+                    .RM => self.flags.bits.sign == 1,
                     .RZ => self.flags.bits.zero == 1,
                     .RC => self.flags.bits.carry == 1,
-                    .RM => self.flags.bits.sign == 1,
                     .RET => true, // unconditional return
                     else => unreachable,
                 };
@@ -780,7 +782,8 @@ pub const Intel8080 = struct {
                 switch (opcode) {
                     .ANI => {
                         self.a = self.a & value; // AND operation
-                        self.flags.bits.aux_carry = if ((self.a & 0x0F) < (value & 0x0F)) 1 else 0; // Check for half-carry
+                        //self.flags.bits.aux_carry = if ((self.a & 0x0F) < (value & 0x0F)) 1 else 0; // Check for half-carry
+                        self.flags.bits.aux_carry = if ((self.a | value) & 0x08 != 0) 1 else 0;
                     },
                     .ORI => {
                         self.a = self.a | value; // OR operation
@@ -813,13 +816,11 @@ pub const Intel8080 = struct {
             // DI: Disable interrupts
             .DI => {
                 self.inte = 0;
-                self.interrupt_req = 0; // Reset interrupt flag
             },
 
             // EI: Enable interrupts
             .EI => {
                 self.inte = 1;
-                self.interrupt_req = 1; // Set interrupt flag
             },
 
             // SPHL: Set stack pointer to HL
@@ -848,7 +849,8 @@ pub const Intel8080 = struct {
                 // Set flags
                 self.set_zsp(@truncate(result));
                 self.flags.bits.carry = if (result > 0xFF) 1 else 0; // Set carry if underflow
-                self.flags.bits.aux_carry = if (((self.a & 0x0F) < (value & 0x0F))) 1 else 0; // Check for half-borrow
+                //self.flags.bits.aux_carry = if (((self.a & 0x0F) < (value & 0x0F))) 1 else 0; // Check for half-borrow
+                self.flags.bits.aux_carry = if (~((self.a ^ (result & 0xFF) ^ value) & 0x10) > 0) 1 else 0;
             },
 
             // OUT
